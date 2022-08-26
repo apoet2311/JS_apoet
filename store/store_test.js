@@ -5,7 +5,8 @@ let user = {
     address: '2701 Sandy Ford',
     city: 'Ford',
     zipCode: '32011',
-    mobilePhone: '+169852147375'
+    mobilePhone: '+169852147375',
+    password: '987456',
 }
 
 Feature('store');
@@ -15,7 +16,7 @@ Scenario('test something', ({ I, homePage, authPage, createAccountPage, myAccoun
     homePage.clickSignIn();
     authPage.fillEmail(Date.now() + '@test.com');
     authPage.clickCreateAccount();
-    createAccountPage.fillNewAccountFields(user);
+    createAccountPage.submitNewUserFields(user);
     myAccountPage.myAccount();
 }).tag('auth');
 
