@@ -1,11 +1,13 @@
 const { I } = inject();
 
 module.exports = {
+  myAccountElement: {css: '#center_column'},
+  myAccountText: 'MY ACCOUNT',
 
 
-  myAccount() {
-    I.waitForVisible({css: '#center_column'});
-    I.see('MY ACCOUNT');
+  verifyMyAccountPage() {
+    I.waitForText(this.myAccountText);
+    I.see(this.myAccountText);
   } 
 
 }

@@ -17,7 +17,7 @@ Scenario('test something', ({ I, homePage, authPage, createAccountPage, myAccoun
     authPage.fillEmail(Date.now() + '@test.com');
     authPage.clickCreateAccount();
     createAccountPage.submitNewUserFields(user);
-    myAccountPage.myAccount();
+    myAccountPage.verifyMyAccountPage();
 }).tag('auth');
 
 
