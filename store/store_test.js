@@ -17,7 +17,6 @@ Scenario('test something', ({ I, homePage, authPage, createAccountPage, myAccoun
     authPage.clickCreateAccount();
     createAccountPage.fillNewAccountFields(user);
     myAccountPage.myAccount();
-    pause();
 }).tag('auth');
 
 
