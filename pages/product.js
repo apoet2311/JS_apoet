@@ -4,22 +4,23 @@ module.exports = {
   productPrice: { css: '#our_price_display' },
   addProductToCartButton: "//button[@name='Submit']",
   proceedToCheckoutButton: "//a[@title='Proceed to checkout']",
+  productAdded: 'Product successfully added to your shopping cart',
+  summary: ' Summary',
 
   async getProductPrice() {
-    return await I.grabTextFrom(this.productPrice);
+    let productPriceString = await I.grabTextFrom(this.productPrice);
+    return Number(productPriceString.slice(1));
   },
 
   clickAddToCart() {
     I.click(this.addProductToCartButton);
-    I.waitForText('Product successfully added to your shopping cart');
-    I.see('Product successfully added to your shopping cart');
+    I.waitForText(this.productAdded);
+    I.see(this.productAdded);
   },
 
   proceedProduct() {
     I.click(this.proceedToCheckoutButton);
-    I.waitForText(' Summary');
-    I.see(' Summary');
+    I.waitForText(this.summary);
+    I.see(this.summary);
   },
-
-  // insert your locators and methods here
 }
