@@ -6,6 +6,7 @@ module.exports = {
   emailInput: { css: '#email' },
   passwordInput: { css: '#passwd' }, // Alt + Shif +F - make code cleaner
   signInButton: { css: '#SubmitLogin' },
+  myAccount: 'My account',
 
   fillRegistrationEmail(email) {
     I.waitForVisible(this.registerEmailInput);
@@ -25,8 +26,8 @@ module.exports = {
     this._fillEmail(email);
     this._fillPassword(password);
     this._clickSignIn();
-    I.waitForText('My account');
-    I.see('My account');
+    I.waitForText(this.myAccount);
+    I.see(this.myAccount);
   },
 
   _fillEmail(email) {
