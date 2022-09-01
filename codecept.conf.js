@@ -18,9 +18,6 @@ exports.config = {
       timeout: 20000,
       waitForTimeout: 20000,
       waitForNavigation: 'networkidle',
-    },
-    "ChaiWrapper": {
-      require: "codeceptjs-chai"
     }
   },
   include: {
@@ -29,8 +26,6 @@ exports.config = {
     authPage: './pages/auth.js',
     createAccountPage: './pages/createAccount.js',
     myAccountPage: './pages/myAccount.js',
-    productPage: './pages/product.js',
-    cartPage: './pages/cart.js',
   },
   name: 'JS_apoet'
 }
