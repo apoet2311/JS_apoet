@@ -1,4 +1,4 @@
-const { I } = inject();
+const { I, tryToHelper } = inject();
 
 module.exports = {
   productPrice: { css: '#our_price_display' },
@@ -8,11 +8,11 @@ module.exports = {
   summary: ' Summary',
 
   async getProductPrice() {
-    let productPriceString = await I.grabTextFrom(this.productPrice);
-    return Number(productPriceString.slice(1));
+      let productPriceString = await I.grabTextFrom(this.productPrice);
+      return Number(productPriceString.slice(1));
   },
 
-  clickAddToCart() {
+  async clickAddToCart() {
     I.click(this.addProductToCartButton);
     I.waitForText(this.productAdded);
     I.see(this.productAdded);

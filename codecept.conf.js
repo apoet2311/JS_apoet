@@ -21,6 +21,17 @@ exports.config = {
     },
     "ChaiWrapper": {
       require: "codeceptjs-chai"
+    },
+    PriceConverter: {
+      require: './helpers/priceConverter.js',
+    },
+    EmailGenerator: {
+      require: './helpers/emailGenerator.js',
+    },
+  },
+  plugins: {
+    tryTo: {
+      enabled: true
     }
   },
   include: {
@@ -31,6 +42,7 @@ exports.config = {
     myAccountPage: './pages/myAccount.js',
     productPage: './pages/product.js',
     cartPage: './pages/cart.js',
+    tryToHelper: './helpers/tryTo.js',
   },
   name: 'JS_apoet'
 }
