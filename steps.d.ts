@@ -13,8 +13,8 @@ type EmailGenerator = import('./helpers/emailGenerator.js');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, homePage: homePage, authPage: authPage, createAccountPage: createAccountPage, myAccountPage: myAccountPage, productPage: productPage, cartPage: cartPage, tryToHelper: tryToHelper }
-  interface Methods extends Playwright, ChaiWrapper, PriceConverter, EmailGenerator {}
-  interface I extends ReturnType<steps_file>, WithTranslation<ChaiWrapper>, WithTranslation<PriceConverter>, WithTranslation<EmailGenerator> {}
+  interface Methods extends Playwright, ChaiWrapper, PriceConverter, EmailGenerator, REST, JSONResponse {}
+  interface I extends ReturnType<steps_file>, WithTranslation<ChaiWrapper>, WithTranslation<PriceConverter>, WithTranslation<EmailGenerator>, WithTranslation<JSONResponse> {}
   namespace Translation {
     interface Actions {}
   }

@@ -28,7 +28,15 @@ exports.config = {
     EmailGenerator: {
       require: './helpers/emailGenerator.js',
     },
+    REST: {
+      defaultHeaders: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    },
+    JSONResponse: {},
   },
+  FileSystem: {},
   plugins: {
     tryTo: {
       enabled: true
