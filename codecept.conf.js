@@ -22,13 +22,18 @@ exports.config = {
     "ChaiWrapper": {
       require: "codeceptjs-chai"
     },
-    PriceConverter: {
-      require: './helpers/priceConverter.js',
-    },
     EmailGenerator: {
       require: './helpers/emailGenerator.js',
     },
+    REST: {
+      defaultHeaders: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    },
+    JSONResponse: {},
   },
+  FileSystem: {},
   plugins: {
     tryTo: {
       enabled: true
@@ -43,6 +48,7 @@ exports.config = {
     productPage: './pages/product.js',
     cartPage: './pages/cart.js',
     tryToHelper: './helpers/tryTo.js',
+    priceConverter: './helpers/priceConverter.js'
   },
   name: 'JS_apoet'
 }
