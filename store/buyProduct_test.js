@@ -9,7 +9,7 @@ Before(({ I, homePage, authPage }) => {
     authPage.login('felinarien23@gmail.com', 'chrisevans2311');
 });
 
-Data(productLinks).Scenario('buy product', async ({ I, productPage, cartPage, tryToHelper, current }) => {
+Data(productLinks).Scenario('buy product', async ({ I, productPage, cartPage, tryToHelper, priceConverter, current }) => {
 
     I.amOnPage(current.productLink);
 
@@ -33,14 +33,9 @@ Data(productLinks).Scenario('buy product', async ({ I, productPage, cartPage, tr
         cartPage.clickConfirmOrderButton();
 
         let order = await cartPage.getOrderId();
-
-        let response = await I.sendGetRequest('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json');
-        I.seeResponseCodeIs(200);
-        let rate = response.data[0].rate;
-        let priceInUAH = totalPriceWithoutTaxNumber * rate;
-        console.log('rate', rate);
+        let priceInUAH = await priceConverter.getPriceInUAH(totalPriceWithoutTaxNumber);
+        
         console.log('priceInHrn', priceInUAH);
-
         console.log('order:', order);
     } else {
         console.error('Add to cart is not available');
