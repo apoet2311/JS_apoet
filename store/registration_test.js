@@ -23,14 +23,3 @@ Scenario('auth', async ({ I, homePage, authPage, createAccountPage, myAccountPag
     createAccountPage.submitNewUserFields(user);
     myAccountPage.verifyMyAccountPage();
 }).tag('auth');
-
-Scenario('custom helper', async ({ I, tryToHelper }) => {
-    I.amOnPage('http://automationpractice.com/index.php?id_product=3&controller=product#/size-s/color-orange');
-    let result = await tryToHelper.checkElementIsVisible({ id: 'add_to_cart' });
-    console.log(result);
-    if (result) {
-        I.click({ id: 'add_to_cart' })
-    } else {
-        console.error('Add to cart is not available');
-    }
-}).tag('helper');

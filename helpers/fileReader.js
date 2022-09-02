@@ -14,7 +14,7 @@ module.exports = {
     let array = string.split(/\r\n/);
     let objectsArray = [];
     for (const row of array) {
-      objectsArray.push({ productLink: row.split(/\s/)[0] });
+      objectsArray.push({ productLink: row });
     }
     return objectsArray;
   },

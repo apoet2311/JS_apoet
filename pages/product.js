@@ -8,13 +8,8 @@ module.exports = {
   summary: ' Summary',
 
   async getProductPrice() {
-    let result = await tryToHelper.checkElementIsVisible(this.addProductToCartButton);
-    if (result) {
       let productPriceString = await I.grabTextFrom(this.productPrice);
       return Number(productPriceString.slice(1));
-    } else {
-      console.error('Add to cart is not available');
-    }
   },
 
   async clickAddToCart() {
