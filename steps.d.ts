@@ -8,11 +8,12 @@ type productPage = typeof import('./pages/product.js');
 type cartPage = typeof import('./pages/cart.js');
 type tryToHelper = typeof import('./helpers/tryTo.js');
 type priceConverter = typeof import('./helpers/priceConverter.js');
+type userData = typeof import('./input/userData.js');
 type ChaiWrapper = import('codeceptjs-chai');
 type EmailGenerator = import('./helpers/emailGenerator.js');
 
 declare namespace CodeceptJS {
-  interface SupportObject { I: I, current: any, homePage: homePage, authPage: authPage, createAccountPage: createAccountPage, myAccountPage: myAccountPage, productPage: productPage, cartPage: cartPage, tryToHelper: tryToHelper, priceConverter: priceConverter }
+  interface SupportObject { I: I, current: any, homePage: homePage, authPage: authPage, createAccountPage: createAccountPage, myAccountPage: myAccountPage, productPage: productPage, cartPage: cartPage, tryToHelper: tryToHelper, priceConverter: priceConverter, userData: userData }
   interface Methods extends Playwright, ChaiWrapper, EmailGenerator, REST, JSONResponse {}
   interface I extends ReturnType<steps_file>, WithTranslation<ChaiWrapper>, WithTranslation<EmailGenerator>, WithTranslation<JSONResponse> {}
   namespace Translation {

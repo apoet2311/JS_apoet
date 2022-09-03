@@ -48,7 +48,8 @@ exports.config = {
     productPage: './pages/product.js',
     cartPage: './pages/cart.js',
     tryToHelper: './helpers/tryTo.js',
-    priceConverter: './helpers/priceConverter.js'
+    priceConverter: './helpers/priceConverter.js',
+    userData: './input/userData.js'
   },
   name: 'JS_apoet'
 }

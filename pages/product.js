@@ -1,4 +1,4 @@
-const { I, tryToHelper } = inject();
+const { I } = inject();
 
 module.exports = {
   productPrice: { css: '#our_price_display' },
